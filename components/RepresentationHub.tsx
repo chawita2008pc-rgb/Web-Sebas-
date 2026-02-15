@@ -70,7 +70,7 @@ export const RepresentationHub: React.FC = () => {
   const center = { x: 500, y: 500 }; // Center of the SVG canvas
 
   return (
-    <section className="relative w-full min-h-screen lg:min-h-[1100px] bg-[#050505] flex flex-col lg:block overflow-hidden">
+    <section className="relative w-full min-h-screen lg:min-h-[1400px] bg-[#050505] flex flex-col lg:block overflow-hidden">
       
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
@@ -100,7 +100,7 @@ export const RepresentationHub: React.FC = () => {
       </div>
 
       {/* Hub Diagram Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] lg:min-h-screen lg:absolute lg:top-[60%] lg:-translate-y-1/2 lg:left-0 lg:right-0 lg:bottom-auto">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] lg:min-h-screen lg:absolute lg:top-[55%] lg:-translate-y-[45%] lg:left-0 lg:right-0 lg:bottom-auto">
         
         {/* --- DESKTOP RADIAL LAYOUT --- */}
         {!isMobile && (
