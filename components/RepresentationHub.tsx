@@ -146,7 +146,7 @@ export const RepresentationHub: React.FC = () => {
               transition={{ duration: 0.8 }}
               onClick={() => setActiveBrandId('glass-export')}
             >
-              <div className="w-[85%] h-[85%] flex items-center justify-center">
+              <div className="hub-center-logo w-[85%] h-[85%] flex items-center justify-center">
                  <LogoGlassExport className="w-full h-full" />
               </div>
               <div className="absolute inset-0 rounded-full border border-[#3BA7FF]/10 animate-pulse-slow group-hover:border-[#3BA7FF]/30 transition-colors" />
@@ -162,7 +162,7 @@ export const RepresentationHub: React.FC = () => {
               return (
                 <motion.button
                   key={pos.id}
-                  className={`absolute w-52 h-16 flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden
+                  className={`partner-card absolute transition-all duration-300 group z-30 cursor-pointer
                     ${isActive
                       ? 'drop-shadow-[0_0_20px_rgba(59,167,255,0.4)]'
                       : 'hover:drop-shadow-[0_0_15px_rgba(59,167,255,0.25)]'
@@ -171,8 +171,7 @@ export const RepresentationHub: React.FC = () => {
                   style={{
                     top: `calc(50% + ${y}px)`,
                     left: `calc(50% + ${x}px)`,
-                    transform: 'translate(-50%, -50%)',
-                    background: 'transparent'
+                    transform: 'translate(-50%, -50%)'
                   }}
                   initial={{ x: '-50%', y: '-50%', scale: 0, opacity: 0 }}
                   animate={{
@@ -181,7 +180,7 @@ export const RepresentationHub: React.FC = () => {
                     scale: 1,
                     opacity: 1
                   }}
-                  whileHover={{ scale: 1.12 }}
+                  whileHover={{ scale: 1.08 }}
                   transition={{
                     scale: { type: "spring", stiffness: 300, damping: 20 },
                     opacity: { duration: 0.5, delay: i * 0.1 }
@@ -201,7 +200,9 @@ export const RepresentationHub: React.FC = () => {
               onClick={() => setActiveBrandId('glass-export')}
               className="w-64 h-64 rounded-full bg-white border border-white/10 flex flex-col items-center justify-center shadow-xl mb-8 relative active:scale-95 transition-transform p-6"
             >
-                <LogoGlassExport className="w-full h-full" />
+                <div className="hub-center-logo w-full h-full flex items-center justify-center">
+                  <LogoGlassExport className="w-full h-full" />
+                </div>
             </button>
 
             <div className="grid grid-cols-2 gap-6 w-full max-w-md">
@@ -210,7 +211,7 @@ export const RepresentationHub: React.FC = () => {
                   <button
                     key={pos.id}
                     onClick={() => setActiveBrandId(pos.id)}
-                    className={`p-4 flex items-center justify-center h-28 transition-all bg-transparent
+                    className={`partner-card w-full transition-all
                       ${activeBrandId === pos.id
                         ? 'drop-shadow-[0_0_15px_rgba(59,167,255,0.4)]'
                         : ''}`}
