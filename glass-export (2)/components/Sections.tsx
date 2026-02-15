@@ -1,0 +1,180 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, MapPin, CheckCircle, Mail, Phone, Clock } from 'lucide-react';
+import { SOLUTION_AREAS, PROCESS_STEPS } from '../constants';
+
+const SectionTitle = ({ title, subtitle }: { title: string; subtitle?: string }) => (
+  <div className="mb-16 max-w-2xl">
+    <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4">{title}</h2>
+    {subtitle && <p className="text-white/60 text-lg">{subtitle}</p>}
+    <div className="h-1 w-20 bg-[#3BA7FF] mt-6" />
+  </div>
+);
+
+export const WhatWeDo = () => (
+  <section id="services" className="py-24 bg-[#050505] border-b border-white/5">
+    <div className="container mx-auto px-6">
+      <SectionTitle title="Core Capabilities" subtitle="Bridging the gap between premium manufacturers and Latin American production plants." />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          'Commercial Representation',
+          'Technical Support & Coordination',
+          'Project & Spare Parts Management',
+          'Liaison between Plant & Manufacturer'
+        ].map((item, i) => (
+          <motion.div 
+            key={i}
+            whileHover={{ y: -5 }}
+            className="p-8 bg-[#0B0F14] border border-white/5 hover:border-[#3BA7FF]/30 transition-colors group"
+          >
+            <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-6 group-hover:bg-[#3BA7FF]/20 transition-colors">
+              <CheckCircle size={20} className="text-white/50 group-hover:text-[#3BA7FF]" />
+            </div>
+            <h3 className="text-white font-medium text-lg">{item}</h3>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export const SolutionAreas = () => (
+  <section id="brands" className="py-24 bg-[#080A0E]">
+    <div className="container mx-auto px-6">
+      <SectionTitle title="Solution Areas" subtitle="Comprehensive equipment coverage for the entire glass manufacturing process." />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {SOLUTION_AREAS.map((area, idx) => (
+          <div key={idx} className="p-8 bg-[#050505] border border-white/5 hover:border-white/10 transition-all">
+            <h3 className="text-xl font-semibold text-white mb-4">{area.title}</h3>
+            <ul className="space-y-2">
+              {area.items.map((item, i) => (
+                <li key={i} className="flex items-center text-white/60 text-sm">
+                  <span className="w-1 h-1 bg-[#3BA7FF] rounded-full mr-3 opacity-70" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export const Locations = () => (
+  <section id="locations" className="py-24 bg-[#050505] relative overflow-hidden">
+    {/* Abstract Map Graphic Background */}
+    <div className="absolute inset-0 opacity-20 pointer-events-none">
+       <div className="absolute right-0 top-0 w-2/3 h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent" />
+    </div>
+
+    <div className="container mx-auto px-6 relative z-10">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
+        <div className="lg:w-1/2 mb-12 lg:mb-0">
+          <SectionTitle title="Regional Presence" subtitle="Strategic locations ensuring rapid response and local coordination." />
+        </div>
+        
+        <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+          {['Argentina', 'Brazil', 'Mexico City'].map((loc) => (
+            <div key={loc} className="flex flex-col items-center justify-center p-8 bg-[#0B0F14] border border-white/10 text-center">
+              <MapPin className="text-[#3BA7FF] mb-4" size={24} />
+              <h4 className="text-white font-medium tracking-wide">{loc}</h4>
+              <span className="text-xs text-white/40 mt-2 uppercase tracking-wider">Office</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export const Process = () => (
+  <section id="process" className="py-24 bg-[#0B0F14]">
+    <div className="container mx-auto px-6">
+      <SectionTitle title="How We Work" />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+        {PROCESS_STEPS.map((step, i) => (
+          <div key={i} className="relative p-8 border-l border-white/10 lg:border-l-0 lg:border-t lg:first:border-l hover:bg-white/5 transition-colors">
+            <span className="text-4xl font-bold text-white/10 mb-4 block">{step.step}</span>
+            <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
+            <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export const Contact = () => (
+  <section id="contact" className="py-24 bg-[#050505]">
+    <div className="container mx-auto px-6">
+      <div className="max-w-4xl mx-auto bg-[#0B0F14] border border-white/10 p-8 md:p-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-semibold text-white mb-4">Start a Conversation</h2>
+          <p className="text-white/60 mb-6">Technical inquiries, quote requests, or partnership opportunities.</p>
+          <div className="flex items-center justify-center text-[#3BA7FF]">
+            <Phone size={20} className="mr-2" />
+            <span className="text-lg font-medium tracking-wide">+54 9 11 5332-9100</span>
+          </div>
+        </div>
+
+        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-wider text-white/50">Name</label>
+              <input type="text" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-wider text-white/50">Company</label>
+              <input type="text" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-wider text-white/50">Email</label>
+              <input type="email" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs uppercase tracking-wider text-white/50">Phone</label>
+              <input type="tel" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-xs uppercase tracking-wider text-white/50">Message</label>
+            <textarea rows={4} className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors"></textarea>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between pt-6 gap-4">
+             <div className="flex items-center text-white/40 text-xs">
+                <Clock size={14} className="mr-2" />
+                Response within 24-48 business hours.
+             </div>
+             <div className="flex gap-4 w-full md:w-auto">
+               <a 
+                 href="https://wa.me/5491153329100"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex-1 md:flex-none px-6 py-3 border border-white/10 text-white hover:bg-white/5 text-sm font-medium transition-colors flex items-center justify-center text-center cursor-pointer"
+               >
+                 Schedule Call
+               </a>
+               <a 
+                 href="https://wa.me/5491153329100"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex-1 md:flex-none px-8 py-3 bg-[#3BA7FF] text-white hover:bg-[#2A90E0] text-sm font-bold tracking-wide transition-colors flex items-center justify-center text-center cursor-pointer"
+               >
+                 SEND INQUIRY
+               </a>
+             </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+);
