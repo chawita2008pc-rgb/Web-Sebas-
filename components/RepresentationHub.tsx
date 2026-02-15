@@ -128,8 +128,8 @@ export const RepresentationHub: React.FC = () => {
                     y1={center.y}
                     x2={x}
                     y2={y}
-                    stroke="rgba(255,255,255,0.15)"
-                    strokeWidth="1"
+                    stroke="rgba(255,255,255,0.35)"
+                    strokeWidth="2.5"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: 1, opacity: 1 }}
                     transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
@@ -167,7 +167,7 @@ export const RepresentationHub: React.FC = () => {
               // Specific Style Rules:
               // Antonini & Falorni = Black circle (bg-black), White border/content
               // Others = White circle (bg-white), Standard content
-              const isDarkNode = ['antonini', 'falorni'].includes(pos.id);
+              const isDarkNode = pos.id === 'antonini';
               
               const bgClass = isDarkNode 
                 ? 'bg-black border-white/20' 
@@ -223,7 +223,7 @@ export const RepresentationHub: React.FC = () => {
             
             <div className="grid grid-cols-2 gap-4 w-full max-w-md">
               {HUB_POSITIONS.map((pos) => {
-                const isDarkNode = ['antonini', 'falorni'].includes(pos.id);
+                const isDarkNode = pos.id === 'antonini';
                 const bgClass = isDarkNode ? 'bg-black border-white/20' : 'bg-white border-white/10';
                 
                 return (
@@ -277,7 +277,7 @@ export const RepresentationHub: React.FC = () => {
                 <div className="flex items-center justify-between mb-6">
                    <h3 className="text-3xl font-bold text-white tracking-tight">{activeContent.name}</h3>
                    {/* Logo in Modal */}
-                   <div className={`w-32 h-20 rounded-md p-2 flex items-center justify-center ${['antonini', 'falorni'].includes(activeContent.id) ? 'bg-black border border-white/20' : 'bg-white'}`}>
+                   <div className={`w-32 h-20 rounded-md p-2 flex items-center justify-center ${activeContent.id === 'antonini' ? 'bg-black border border-white/20' : 'bg-white'}`}>
                       {getBrandLogo(activeContent.id, "w-full h-full")}
                    </div>
                 </div>
