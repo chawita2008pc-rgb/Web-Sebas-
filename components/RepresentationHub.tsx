@@ -162,16 +162,17 @@ export const RepresentationHub: React.FC = () => {
               return (
                 <motion.button
                   key={pos.id}
-                  className={`partner-circle absolute w-64 h-64 rounded-full flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden shadow-lg
+                  className={`absolute w-56 h-32 flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden
                     ${isActive
-                      ? 'shadow-[0_0_30px_rgba(59,167,255,0.3)] !border-[#3BA7FF]'
-                      : 'hover:border-[#3BA7FF]/50 hover:shadow-[0_0_20px_rgba(59,167,255,0.15)]'
+                      ? 'drop-shadow-[0_0_20px_rgba(59,167,255,0.4)]'
+                      : 'hover:drop-shadow-[0_0_15px_rgba(59,167,255,0.25)]'
                     }
                   `}
                   style={{
                     top: `calc(50% + ${y}px)`,
                     left: `calc(50% + ${x}px)`,
-                    transform: 'translate(-50%, -50%)'
+                    transform: 'translate(-50%, -50%)',
+                    background: 'transparent'
                   }}
                   initial={{ x: '-50%', y: '-50%', scale: 0, opacity: 0 }}
                   animate={{
@@ -180,16 +181,14 @@ export const RepresentationHub: React.FC = () => {
                     scale: 1,
                     opacity: 1
                   }}
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.12 }}
                   transition={{
                     scale: { type: "spring", stiffness: 300, damping: 20 },
                     opacity: { duration: 0.5, delay: i * 0.1 }
                   }}
                   onClick={() => setActiveBrandId(pos.id)}
                 >
-                  <div className="w-[85%] h-[85%] flex items-center justify-center">
-                     {getBrandLogo(pos.id, "w-full h-full")}
-                  </div>
+                  {getBrandLogo(pos.id, "w-full h-full object-contain")}
                 </motion.button>
               );
             })}
@@ -205,18 +204,18 @@ export const RepresentationHub: React.FC = () => {
                 <LogoGlassExport className="w-full h-full" />
             </button>
 
-            <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+            <div className="grid grid-cols-2 gap-6 w-full max-w-md">
               {HUB_POSITIONS.map((pos) => {
                 return (
                   <button
                     key={pos.id}
                     onClick={() => setActiveBrandId(pos.id)}
-                    className={`partner-circle p-6 rounded-lg flex items-center justify-center h-40 transition-all
+                    className={`p-4 flex items-center justify-center h-28 transition-all bg-transparent
                       ${activeBrandId === pos.id
-                        ? '!border-[#3BA7FF] shadow-lg shadow-[#3BA7FF]/20'
+                        ? 'drop-shadow-[0_0_15px_rgba(59,167,255,0.4)]'
                         : ''}`}
                   >
-                    {getBrandLogo(pos.id, "w-full h-full")}
+                    {getBrandLogo(pos.id, "w-full h-full object-contain")}
                   </button>
                 )
               })}
@@ -253,7 +252,7 @@ export const RepresentationHub: React.FC = () => {
               <div className="mt-8">
                 <div className="flex items-center justify-between mb-6">
                    <h3 className="text-3xl font-bold text-white tracking-tight">{activeContent.name}</h3>
-                   <div className="partner-circle w-32 h-20 rounded-md p-2 flex items-center justify-center">
+                   <div className="w-32 h-20 rounded-md p-2 flex items-center justify-center bg-white/10">
                       {getBrandLogo(activeContent.id, "w-full h-full")}
                    </div>
                 </div>
