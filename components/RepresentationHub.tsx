@@ -66,7 +66,7 @@ export const RepresentationHub: React.FC = () => {
     : BRANDS.find((b) => b.id === activeBrandId);
 
   // Measurements for Layout
-  const radius = 340; // Radius of the circle of logos
+  const radius = 380; // Radius of the circle of logos
   const center = { x: 500, y: 500 }; // Center of the SVG canvas
 
   return (
@@ -176,7 +176,7 @@ export const RepresentationHub: React.FC = () => {
               return (
                 <motion.button
                   key={pos.id}
-                  className={`absolute w-52 h-52 rounded-full flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden border shadow-lg
+                  className={`absolute w-64 h-64 rounded-full flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden border shadow-lg
                     ${isActive
                       ? `shadow-[0_0_30px_rgba(59,167,255,0.3)] border-[#3BA7FF] ${bgClass}` 
                       : `${bgClass} hover:border-[#3BA7FF]/50 hover:shadow-[0_0_20px_rgba(59,167,255,0.15)]`
@@ -202,8 +202,7 @@ export const RepresentationHub: React.FC = () => {
                   }}
                   onClick={() => setActiveBrandId(pos.id)}
                 >
-                  {/* Container for Image - ensures 70% max width/height within the circle */}
-                  <div className="w-[75%] h-[75%] flex items-center justify-center">
+                  <div className="w-[85%] h-[85%] flex items-center justify-center">
                      {getBrandLogo(pos.id, "w-full h-full")}
                   </div>
                 </motion.button>
