@@ -31,8 +31,8 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center group">
-            <div className="bg-white rounded shadow-lg shadow-white/5 border border-white/10 flex items-center justify-center overflow-hidden">
-              <img src={glassExportLogo} alt="Glass Export" className="h-14 w-auto" />
+            <div className="bg-white rounded-lg shadow-lg shadow-white/5 border border-white/10 flex items-center justify-center px-4 py-2">
+              <img src={glassExportLogo} alt="Glass Export" className="h-12 w-auto max-w-[200px] object-contain" />
             </div>
         </a>
 
