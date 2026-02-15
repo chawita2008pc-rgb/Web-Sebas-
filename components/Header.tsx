@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
         {/* Logo Container - White background, moved further left with -ml-6 */}
         <a href="#" className="flex items-center group -ml-6">
             <div className="bg-white px-4 py-2 rounded shadow-lg shadow-white/5 border border-white/10 flex items-center justify-center">
-              <div className="w-32 h-12 flex items-center justify-center">
+              <div className="w-44 h-14 flex items-center justify-center">
                 <LogoGlassExport className="w-full h-full" mode="color" />
               </div>
             </div>

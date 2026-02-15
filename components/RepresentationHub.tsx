@@ -140,7 +140,7 @@ export const RepresentationHub: React.FC = () => {
 
             {/* Central Node: GLASS EXPORT */}
             <motion.button 
-              className="absolute w-80 h-80 rounded-full bg-[#050505] border border-white/10 flex items-center justify-center z-20 shadow-2xl shadow-black group cursor-pointer p-0"
+              className="absolute w-80 h-80 rounded-full bg-white border border-white/10 flex items-center justify-center z-20 shadow-2xl shadow-black group cursor-pointer p-0"
               style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
               initial={{ x: '-50%', y: '-50%', scale: 0.8, opacity: 0 }}
               animate={{ x: '-50%', y: '-50%', scale: 1, opacity: 1 }}
