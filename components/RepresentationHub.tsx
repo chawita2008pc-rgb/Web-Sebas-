@@ -158,19 +158,14 @@ export const RepresentationHub: React.FC = () => {
               const y = Math.sin(radian) * radius;
 
               const isActive = activeBrandId === pos.id;
-              const isDarkNode = pos.id === 'antonini';
-
-              const bgClass = isDarkNode
-                ? 'bg-black border-white/20'
-                : 'bg-white border-white/10';
 
               return (
                 <motion.button
                   key={pos.id}
-                  className={`absolute w-64 h-64 rounded-full flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden border shadow-lg
+                  className={`partner-circle absolute w-64 h-64 rounded-full flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden shadow-lg
                     ${isActive
-                      ? `shadow-[0_0_30px_rgba(59,167,255,0.3)] border-[#3BA7FF] ${bgClass}`
-                      : `${bgClass} hover:border-[#3BA7FF]/50 hover:shadow-[0_0_20px_rgba(59,167,255,0.15)]`
+                      ? 'shadow-[0_0_30px_rgba(59,167,255,0.3)] !border-[#3BA7FF]'
+                      : 'hover:border-[#3BA7FF]/50 hover:shadow-[0_0_20px_rgba(59,167,255,0.15)]'
                     }
                   `}
                   style={{
@@ -212,16 +207,13 @@ export const RepresentationHub: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-4 w-full max-w-md">
               {HUB_POSITIONS.map((pos) => {
-                const isDarkNode = pos.id === 'antonini';
-                const bgClass = isDarkNode ? 'bg-black border-white/20' : 'bg-white border-white/10';
-
                 return (
                   <button
                     key={pos.id}
                     onClick={() => setActiveBrandId(pos.id)}
-                    className={`p-6 rounded-lg border flex items-center justify-center h-40 transition-all ${bgClass}
+                    className={`partner-circle p-6 rounded-lg flex items-center justify-center h-40 transition-all
                       ${activeBrandId === pos.id
-                        ? 'border-[#3BA7FF] shadow-lg shadow-[#3BA7FF]/20'
+                        ? '!border-[#3BA7FF] shadow-lg shadow-[#3BA7FF]/20'
                         : ''}`}
                   >
                     {getBrandLogo(pos.id, "w-full h-full")}
@@ -261,7 +253,7 @@ export const RepresentationHub: React.FC = () => {
               <div className="mt-8">
                 <div className="flex items-center justify-between mb-6">
                    <h3 className="text-3xl font-bold text-white tracking-tight">{activeContent.name}</h3>
-                   <div className={`w-32 h-20 rounded-md p-2 flex items-center justify-center ${activeContent.id === 'antonini' ? 'bg-black border border-white/20' : 'bg-white'}`}>
+                   <div className="partner-circle w-32 h-20 rounded-md p-2 flex items-center justify-center">
                       {getBrandLogo(activeContent.id, "w-full h-full")}
                    </div>
                 </div>
