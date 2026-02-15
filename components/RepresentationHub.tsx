@@ -36,6 +36,7 @@ const getBrandLogo = (id: string, className: string) => {
 
 export const RepresentationHub: React.FC = () => {
   const [activeBrandId, setActiveBrandId] = useState<string | null>(null);
+  const [hoveredBrandId, setHoveredBrandId] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const { t } = useLanguage();
 
@@ -70,7 +71,8 @@ export const RepresentationHub: React.FC = () => {
 
   const activeContent = activeBrandId ? getActiveContent() : null;
 
-  const radius = 380;
+  /* Distance from center to each partner card (single source of truth) */
+  const RADIUS = 440;
   const center = { x: 500, y: 500 };
 
   return (
@@ -104,34 +106,33 @@ export const RepresentationHub: React.FC = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] lg:min-h-screen lg:absolute lg:top-[50%] lg:-translate-y-[50%] lg:left-0 lg:right-0 lg:bottom-auto">
 
         {!isMobile && (
-          <div className="relative w-[1000px] h-[1000px] flex items-center justify-center">
+          <div className="relative w-[1100px] h-[1100px] flex items-center justify-center">
 
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1100 1100">
               <defs>
                 <radialGradient id="centerGradient" cx="0.5" cy="0.5" r="0.5">
                   <stop offset="0%" stopColor="#3BA7FF" />
                   <stop offset="100%" stopColor="transparent" />
                 </radialGradient>
               </defs>
-              <circle cx={center.x} cy={center.y} r={210} fill="url(#centerGradient)" opacity="0.05" />
+              <circle cx={550} cy={550} r={210} fill="url(#centerGradient)" opacity="0.05" />
 
               {HUB_POSITIONS.map((pos) => {
                 const radian = pos.angle * (Math.PI / 180);
-                const x = center.x + radius * Math.cos(radian);
-                const y = center.y + radius * Math.sin(radian);
+                const x = 550 + RADIUS * Math.cos(radian);
+                const y = 550 + RADIUS * Math.sin(radian);
+                const isHovered = hoveredBrandId === pos.id;
 
                 return (
-                  <motion.line
+                  <line
                     key={`line-${pos.id}`}
-                    x1={center.x}
-                    y1={center.y}
+                    className={`hub-line${isHovered ? ' hub-line--active' : ''}`}
+                    x1={550}
+                    y1={550}
                     x2={x}
                     y2={y}
-                    stroke="rgba(255,255,255,0.35)"
-                    strokeWidth="2.5"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
+                    stroke={isHovered ? '#3BA7FF' : 'rgba(255,255,255,0.35)'}
+                    strokeWidth={isHovered ? 3 : 2.5}
                   />
                 );
               })}
@@ -154,24 +155,16 @@ export const RepresentationHub: React.FC = () => {
 
             {HUB_POSITIONS.map((pos, i) => {
               const radian = pos.angle * (Math.PI / 180);
-              const x = Math.cos(radian) * radius;
-              const y = Math.sin(radian) * radius;
-
-              const isActive = activeBrandId === pos.id;
+              const x = Math.cos(radian) * RADIUS;
+              const y = Math.sin(radian) * RADIUS;
 
               return (
                 <motion.button
                   key={pos.id}
-                  className={`partner-card absolute transition-all duration-300 group z-30 cursor-pointer
-                    ${isActive
-                      ? 'drop-shadow-[0_0_20px_rgba(59,167,255,0.4)]'
-                      : 'hover:drop-shadow-[0_0_15px_rgba(59,167,255,0.25)]'
-                    }
-                  `}
+                  className="partner-card absolute z-30"
                   style={{
                     top: `calc(50% + ${y}px)`,
                     left: `calc(50% + ${x}px)`,
-                    transform: 'translate(-50%, -50%)'
                   }}
                   initial={{ x: '-50%', y: '-50%', scale: 0, opacity: 0 }}
                   animate={{
@@ -180,11 +173,11 @@ export const RepresentationHub: React.FC = () => {
                     scale: 1,
                     opacity: 1
                   }}
-                  whileHover={{ scale: 1.08 }}
                   transition={{
-                    scale: { type: "spring", stiffness: 300, damping: 20 },
                     opacity: { duration: 0.5, delay: i * 0.1 }
                   }}
+                  onMouseEnter={() => setHoveredBrandId(pos.id)}
+                  onMouseLeave={() => setHoveredBrandId(null)}
                   onClick={() => setActiveBrandId(pos.id)}
                 >
                   {getBrandLogo(pos.id, "w-full h-full object-contain")}
@@ -211,10 +204,7 @@ export const RepresentationHub: React.FC = () => {
                   <button
                     key={pos.id}
                     onClick={() => setActiveBrandId(pos.id)}
-                    className={`partner-card w-full transition-all
-                      ${activeBrandId === pos.id
-                        ? 'drop-shadow-[0_0_15px_rgba(59,167,255,0.4)]'
-                        : ''}`}
+                    className="partner-card w-full"
                   >
                     {getBrandLogo(pos.id, "w-full h-full object-contain")}
                   </button>
