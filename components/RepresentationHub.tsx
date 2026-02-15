@@ -101,7 +101,7 @@ export const RepresentationHub: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] lg:min-h-screen lg:absolute lg:top-[55%] lg:-translate-y-[45%] lg:left-0 lg:right-0 lg:bottom-auto">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] lg:min-h-screen lg:absolute lg:top-[50%] lg:-translate-y-[50%] lg:left-0 lg:right-0 lg:bottom-auto">
 
         {!isMobile && (
           <div className="relative w-[1000px] h-[1000px] flex items-center justify-center">
@@ -113,7 +113,7 @@ export const RepresentationHub: React.FC = () => {
                   <stop offset="100%" stopColor="transparent" />
                 </radialGradient>
               </defs>
-              <circle cx={center.x} cy={center.y} r={180} fill="url(#centerGradient)" opacity="0.05" />
+              <circle cx={center.x} cy={center.y} r={210} fill="url(#centerGradient)" opacity="0.05" />
 
               {HUB_POSITIONS.map((pos) => {
                 const radian = pos.angle * (Math.PI / 180);
@@ -138,7 +138,7 @@ export const RepresentationHub: React.FC = () => {
             </svg>
 
             <motion.button
-              className="absolute w-80 h-80 rounded-full bg-white border border-white/10 flex items-center justify-center z-20 shadow-2xl shadow-black group cursor-pointer p-0"
+              className="absolute w-96 h-96 rounded-full bg-white border border-white/10 flex items-center justify-center z-20 shadow-2xl shadow-black group cursor-pointer p-0"
               style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
               initial={{ x: '-50%', y: '-50%', scale: 0.8, opacity: 0 }}
               animate={{ x: '-50%', y: '-50%', scale: 1, opacity: 1 }}
@@ -162,7 +162,7 @@ export const RepresentationHub: React.FC = () => {
               return (
                 <motion.button
                   key={pos.id}
-                  className={`absolute w-56 h-32 flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden
+                  className={`absolute w-52 h-16 flex items-center justify-center transition-all duration-300 group z-30 cursor-pointer overflow-hidden
                     ${isActive
                       ? 'drop-shadow-[0_0_20px_rgba(59,167,255,0.4)]'
                       : 'hover:drop-shadow-[0_0_15px_rgba(59,167,255,0.25)]'
