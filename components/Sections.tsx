@@ -144,11 +144,11 @@ export const Contact = () => {
           name, company, email, phone, message,
         }),
       });
-      const data = await res.json() as { success: boolean };
-      if (!data.success) throw new Error();
+      const data = await res.json() as { success: boolean; message?: string };
+      if (!data.success) throw new Error(data.message ?? 'Unknown error');
       setSubmitted(true);
-    } catch {
-      setErrorMsg(t.contact.errorMessage);
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : t.contact.errorMessage);
     } finally {
       setLoading(false);
     }
