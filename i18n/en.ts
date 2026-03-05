@@ -11,7 +11,7 @@ export const en = {
   // Hero / RepresentationHub
   hero: {
     title1: 'Technical & Commercial',
-    titleHighlight: 'Hub',
+    titleHighlight: 'Center',
     contactLink: 'Contact Us',
     glassExportName: 'Glass Export',
     glassExportDesc: 'The central hub for technical representation and commercial management in the Latin American glass industry. Connecting plants with premium European manufacturers.',
@@ -96,6 +96,10 @@ export const en = {
     responseTime: 'Response within 24-48 business hours.',
     scheduleCall: 'Schedule Call',
     sendInquiry: 'SEND INQUIRY',
+    sending: 'SENDING...',
+    successTitle: 'Message Sent',
+    successMessage: "We'll get back to you within 24-48 business hours.",
+    errorMessage: 'Something went wrong. Please try again or write to glass@glassexport.com',
   },
 
   // Manufacturer Locations

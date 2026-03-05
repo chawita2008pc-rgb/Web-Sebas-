@@ -103,7 +103,7 @@ export const Process = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
           {t.process.steps.map((step, i) => (
             <div key={i} className="relative p-8 border-l border-white/10 lg:border-l-0 lg:border-t lg:first:border-l hover:bg-white/5 transition-colors">
-              <span className="text-4xl font-bold text-white/10 mb-4 block">{step.step}</span>
+              <span className="text-4xl font-bold text-white/10 mb-4 block font-mono">{step.step}</span>
               <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
               <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
             </div>
@@ -116,6 +116,42 @@ export const Process = () => {
 
 export const Contact = () => {
   const { t } = useLanguage();
+
+  const [name,    setName]    = React.useState('');
+  const [company, setCompany] = React.useState('');
+  const [email,   setEmail]   = React.useState('');
+  const [phone,   setPhone]   = React.useState('');
+  const [message, setMessage] = React.useState('');
+  const [loading,   setLoading]   = React.useState(false);
+  const [submitted, setSubmitted] = React.useState(false);
+  const [errorMsg,  setErrorMsg]  = React.useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setErrorMsg(null);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: '78f49fe7-3043-4ba1-893c-99e6e3613b0a',
+          subject: `New Inquiry from ${name}${company ? ` — ${company}` : ''}`,
+          name, company, email, phone, message,
+        }),
+      });
+      const data = await res.json() as { success: boolean };
+      if (!data.success) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setErrorMsg(t.contact.errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const inputClass = 'w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors';
+
   return (
     <section id="contact" className="py-24 bg-[#050505]">
       <div className="container mx-auto px-6">
@@ -129,59 +165,81 @@ export const Contact = () => {
             </div>
           </div>
 
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelName}</label>
-                <input type="text" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
+          {submitted ? (
+            <div className="text-center py-12 px-6">
+              <div className="w-14 h-14 rounded-full bg-[#3BA7FF]/10 border border-[#3BA7FF]/30 flex items-center justify-center mx-auto mb-6">
+                <CheckCircle size={28} className="text-[#3BA7FF]" />
               </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelCompany}</label>
-                <input type="text" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
-              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">{t.contact.successTitle}</h3>
+              <p className="text-white/60 text-sm leading-relaxed max-w-sm mx-auto">{t.contact.successMessage}</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelEmail}</label>
-                <input type="email" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
+          ) : (
+            <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelName} <span className="text-[#3BA7FF]">*</span></label>
+                  <input type="text" required value={name} onChange={(e) => setName(e.target.value)} className={inputClass} />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelCompany}</label>
+                  <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} className={inputClass} />
+                </div>
               </div>
-              <div className="space-y-2">
-                <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelPhone}</label>
-                <input type="tel" className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors" />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelEmail} <span className="text-[#3BA7FF]">*</span></label>
+                  <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelPhone}</label>
+                  <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
+                </div>
               </div>
-            </div>
 
-            <div className="space-y-2">
-              <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelMessage}</label>
-              <textarea rows={4} className="w-full bg-[#050505] border border-white/10 text-white p-3 focus:outline-none focus:border-[#3BA7FF] transition-colors"></textarea>
-            </div>
+              <div className="space-y-2">
+                <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelMessage} <span className="text-[#3BA7FF]">*</span></label>
+                <textarea rows={4} required value={message} onChange={(e) => setMessage(e.target.value)} className={inputClass} />
+              </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between pt-6 gap-4">
-               <div className="flex items-center text-white/40 text-xs">
+              {errorMsg && (
+                <div className="flex items-start gap-3 p-4 bg-red-900/20 border border-red-500/30 text-red-400 text-sm leading-relaxed">
+                  <Mail size={16} className="mt-0.5 shrink-0" />
+                  <span>{errorMsg}</span>
+                </div>
+              )}
+
+              <div className="flex flex-col md:flex-row items-center justify-between pt-6 gap-4">
+                <div className="flex items-center text-white/40 text-xs">
                   <Clock size={14} className="mr-2" />
                   {t.contact.responseTime}
-               </div>
-               <div className="flex gap-4 w-full md:w-auto">
-                 <a
-                   href="https://wa.me/5491153329100"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex-1 md:flex-none px-6 py-3 border border-white/10 text-white hover:bg-white/5 text-sm font-medium transition-colors flex items-center justify-center text-center cursor-pointer"
-                 >
-                   {t.contact.scheduleCall}
-                 </a>
-                 <a
-                   href="https://wa.me/5491153329100"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="flex-1 md:flex-none px-8 py-3 bg-[#3BA7FF] text-white hover:bg-[#2A90E0] text-sm font-bold tracking-wide transition-colors flex items-center justify-center text-center cursor-pointer"
-                 >
-                   {t.contact.sendInquiry}
-                 </a>
-               </div>
-            </div>
-          </form>
+                </div>
+                <div className="flex gap-4 w-full md:w-auto">
+                  <a
+                    href="https://wa.me/5491153329100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 md:flex-none px-6 py-3 border border-white/10 text-white hover:bg-white/5 text-sm font-medium transition-colors flex items-center justify-center text-center cursor-pointer"
+                  >
+                    {t.contact.scheduleCall}
+                  </a>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex-1 md:flex-none px-8 py-3 bg-[#3BA7FF] text-white hover:bg-[#2A90E0] text-sm font-bold tracking-wide transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {loading && (
+                      <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                    )}
+                    {loading ? t.contact.sending : t.contact.sendInquiry}
+                  </button>
+                </div>
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </section>

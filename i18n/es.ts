@@ -10,7 +10,7 @@ export const es = {
 
   // Hero / RepresentationHub
   hero: {
-    title1: 'Hub Técnico y',
+    title1: 'Centro Técnico y',
     titleHighlight: 'Comercial',
     contactLink: 'Contáctenos',
     glassExportName: 'Glass Export',
@@ -96,6 +96,10 @@ export const es = {
     responseTime: 'Respuesta dentro de 24-48 horas hábiles.',
     scheduleCall: 'Agendar Llamada',
     sendInquiry: 'ENVIAR CONSULTA',
+    sending: 'ENVIANDO...',
+    successTitle: 'Mensaje Enviado',
+    successMessage: 'Le responderemos dentro de 24-48 horas hábiles.',
+    errorMessage: 'Algo salió mal. Por favor intente de nuevo o escriba a glass@glassexport.com',
   },
 
   // Manufacturer Locations
