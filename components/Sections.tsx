@@ -128,6 +128,10 @@ export const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!name.trim() || !company.trim() || !email.trim() || !phone.trim() || !message.trim()) {
+      setErrorMsg(t.contact.errorMessage);
+      return;
+    }
     setLoading(true);
     setErrorMsg(null);
     try {
@@ -181,8 +185,8 @@ export const Contact = () => {
                   <input type="text" required value={name} onChange={(e) => setName(e.target.value)} className={inputClass} />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelCompany}</label>
-                  <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} className={inputClass} />
+                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelCompany} <span className="text-[#3BA7FF]">*</span></label>
+                  <input type="text" required value={company} onChange={(e) => setCompany(e.target.value)} className={inputClass} />
                 </div>
               </div>
 
@@ -192,8 +196,8 @@ export const Contact = () => {
                   <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelPhone}</label>
-                  <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
+                  <label className="text-xs uppercase tracking-wider text-white/50">{t.contact.labelPhone} <span className="text-[#3BA7FF]">*</span></label>
+                  <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} className={inputClass} />
                 </div>
               </div>
 
