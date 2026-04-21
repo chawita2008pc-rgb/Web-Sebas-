@@ -66,9 +66,7 @@ export const Header: React.FC = () => {
           </div>
 
           <a
-            href="https://wa.me/5491153329100"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="px-5 py-2 bg-white text-black text-sm font-semibold hover:bg-[#3BA7FF] hover:text-white transition-colors duration-300"
           >
             {t.nav.contactUs}
@@ -115,9 +113,7 @@ export const Header: React.FC = () => {
           </div>
 
            <a
-            href="https://wa.me/5491153329100"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="w-full text-center py-3 bg-[#3BA7FF] text-white font-bold mt-4 block"
             onClick={() => setMobileMenuOpen(false)}
           >

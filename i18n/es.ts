@@ -2,7 +2,7 @@ export const es = {
   // Header
   nav: {
     services: 'Servicios',
-    brands: 'Marcas',
+    brands: 'Que Hacemos',
     locations: 'Ubicaciones',
     process: 'Proceso',
     contactUs: 'Contáctenos',
