@@ -39,28 +39,28 @@ export const es = {
     subtitle: 'Cobertura integral de equipos para todo el proceso de fabricación de vidrio.',
     areas: [
       {
-        title: 'Hornos y Recocido',
-        items: ['Lehrs de Recocido', 'Lehrs de Decoración', 'Temple', 'Repuestos'],
-      },
-      {
-        title: 'Moldes y Componentes',
-        items: ['Moldes y Blancos', 'Anillos de Cuello', 'Placas de Fondo', 'Cavidades'],
+        title: 'Hornos y Fusión',
+        items: ['Hornos', 'Hornos de templado', 'Hornos de moldura', 'Hornos para equipo de delivery', 'Ingeniería de hornos', 'Proyectos llave en mano'],
       },
       {
         title: 'Alimentación y Distribución',
-        items: ['Alimentadores', 'Agitadores', 'Canales', 'Antecrisoles'],
+        items: ['Canales', 'Sistemas de coloreado', 'Sistemas de agitadores', 'Sistemas de dosificación superficial'],
+      },
+      {
+        title: 'Moldes y Componentes',
+        items: ['Pre moldes', 'Moldes', 'Fondos', 'Coronas', 'Demás accesorios'],
       },
       {
         title: 'Proceso IS y Producción',
-        items: ['Máquinas IS', 'Soplado y Prensado', 'Formación de Gota', 'Post Quema'],
+        items: ['Máquinas IS', 'Máquinas rotativas (prensas, H28, etc.)', 'Robots', 'Mecanismos para prensas y máquinas IS', 'Repuestos y equipamiento variable'],
       },
       {
-        title: 'Refractarios y Contacto',
-        items: ['Refractarios', 'Tubos', 'Boquillas', 'Consumibles'],
+        title: 'Refractarios',
+        items: ['Refractarios para hornos', 'Refractarios para alimentadores', 'Refractarios para W.E.', 'Refractarios para cámaras de regeneración', 'Refractarios consumibles'],
       },
       {
         title: 'Fin de Línea',
-        items: ['Flejado', 'Envoltura', 'Paletizado', 'Enfundado Termocontraíble'],
+        items: ['Máquinas flejadoras', 'Máquinas de termoretracción', 'Máquinas envolvedoras', 'Máquinas de enfundado', 'Repuestos'],
       },
     ],
   },
@@ -77,7 +77,7 @@ export const es = {
   process: {
     title: 'Cómo Trabajamos',
     steps: [
-      { step: '01', title: 'Diagnóstico', description: 'Analizamos los requerimientos actuales de la planta y los cuellos de botella de producción.' },
+      { step: '01', title: 'Diagnóstico', description: 'Analizamos los requerimientos actuales de la planta para dar soporte a las necesidades.' },
       { step: '02', title: 'Ingeniería', description: 'Selección del equipo óptimo y diseño de la solución técnica.' },
       { step: '03', title: 'Implementación', description: 'Coordinación de logística, instalación y puesta en marcha.' },
       { step: '04', title: 'Soporte', description: 'Servicio post-venta, gestión de repuestos y asistencia técnica.' },
@@ -130,11 +130,11 @@ export const es = {
 
   // Brands (descriptions)
   brands: {
-    sigma: { description: 'Especialistas en refractarios y acondicionamiento de vidrio.', products: ['Tubos y Anillos', 'Refractarios', 'Canales', 'Boquillas'] },
-    perego: { description: 'Fabricación de moldes de precisión para la industria del vidrio.', products: ['Moldes Blancos', 'Placas de Fondo', 'Anillos de Cuello', 'Cabezales de Soplado'] },
-    antonini: { description: 'Lehrs de recocido y decoración de clase mundial.', products: ['Lehrs de Recocido', 'Lehrs de Decoración', 'Temple', 'Quemadores'] },
-    falorni: { description: 'Tecnología de fusión de vidrio y servicios de ingeniería.', products: ['Ingeniería', 'Alimentadores', 'Agitadores', 'Canales', 'Hornos'] },
-    famor: { description: 'Ingeniería y equipos para producción de vidrio hueco.', products: ['Máquinas IS', 'Post Quema', 'Robots', 'Mecanismos de Prensa'] },
-    oms: { description: 'Soluciones de embalaje de fin de línea.', products: ['Máquinas Flejadoras', 'Máquinas Envolvedoras', 'Enfundado'] },
+    sigma: { description: 'Especialistas en refractarios y acondicionamiento de vidrio.', products: ['Refractarios para hornos', 'Refractarios para alimentadores', 'Refractarios para W.E.', 'Refractarios para cámaras de regeneración', 'Refractarios consumibles'] },
+    perego: { description: 'Fabricación de moldes de precisión para la industria del vidrio.', products: ['Pre moldes', 'Moldes', 'Fondos', 'Coronas', 'Demás accesorios'] },
+    antonini: { description: 'Lehrs de recocido y decoración de clase mundial.', products: ['Hornos', 'Hornos de templado', 'Sistemas de dosificación superficial', 'Hornos de moldura', 'Hornos para equipo de delivery', 'Refacciones'] },
+    falorni: { description: 'Tecnología de fusión de vidrio y servicios de ingeniería.', products: ['Ingeniería de hornos', 'Hornos', 'Canales', 'Sistemas de coloreado', 'Sistemas de agitadores', 'Proyectos llave en mano', 'Refacciones'] },
+    famor: { description: 'Ingeniería y fabricación de equipos para producción de vidrio.', products: ['Máquinas IS', 'Máquinas rotativas (prensas, H28, etc.)', 'Robots', 'Mecanismos para prensas y máquinas IS', 'Repuestos y equipamiento variable'] },
+    oms: { description: 'Soluciones de embalaje de fin de línea.', products: ['Máquinas flejadoras', 'Máquinas de termoretracción', 'Máquinas envolvedoras', 'Máquinas de enfundado', 'Repuestos'] },
   },
 };

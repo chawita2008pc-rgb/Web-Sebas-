@@ -139,7 +139,7 @@ export const RepresentationHub: React.FC = () => {
             </svg>
 
             <motion.button
-              className="absolute w-96 h-96 rounded-full bg-white border border-white/10 flex items-center justify-center z-20 shadow-2xl shadow-black group cursor-pointer p-0"
+              className="absolute w-[28rem] h-[28rem] rounded-full bg-white border border-white/10 flex items-center justify-center z-20 shadow-2xl shadow-black group cursor-pointer p-0"
               style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
               initial={{ x: '-50%', y: '-50%', scale: 0.8, opacity: 0 }}
               animate={{ x: '-50%', y: '-50%', scale: 1, opacity: 1 }}
@@ -191,7 +191,7 @@ export const RepresentationHub: React.FC = () => {
           <div className="container px-4 flex flex-col gap-6 z-20 items-center pb-20">
             <button
               onClick={() => setActiveBrandId('glass-export')}
-              className="w-64 h-64 rounded-full bg-white border border-white/10 flex flex-col items-center justify-center shadow-xl mb-8 relative active:scale-95 transition-transform p-6"
+              className="w-80 h-80 rounded-full bg-white border border-white/10 flex flex-col items-center justify-center shadow-xl mb-8 relative active:scale-95 transition-transform p-6"
             >
                 <div className="hub-center-logo w-full h-full flex items-center justify-center">
                   <LogoGlassExport className="w-full h-full" />

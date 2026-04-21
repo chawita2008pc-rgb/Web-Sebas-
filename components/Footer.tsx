@@ -36,8 +36,8 @@ export const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:sszulman@yahoo.com.ar" className="hover:text-white transition-colors block">
-                    sszulman@yahoo.com.ar
+                  <a href="mailto:sebastian@glassexport.com" className="hover:text-white transition-colors block">
+                    sebastian@glassexport.com
                   </a>
                 </li>
               </ul>
