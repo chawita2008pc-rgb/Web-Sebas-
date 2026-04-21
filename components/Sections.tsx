@@ -46,17 +46,33 @@ export const SolutionAreas = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.solutionAreas.areas.map((area, idx) => (
-            <div key={idx} className="p-8 bg-[#050505] border border-white/5 hover:border-white/10 transition-all">
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="p-8 bg-[#050505] border border-white/5 hover:border-[#3BA7FF]/30 transition-colors group cursor-default"
+            >
+              <div className="h-0.5 w-8 bg-[#3BA7FF] mb-5 group-hover:w-16 transition-all duration-300" />
               <h3 className="text-xl font-semibold text-white mb-4">{area.title}</h3>
               <ul className="space-y-2">
                 {area.items.map((item, i) => (
-                  <li key={i} className="flex items-center text-white/60 text-sm">
-                    <span className="w-1 h-1 bg-[#3BA7FF] rounded-full mr-3 opacity-70" />
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: idx * 0.08 + i * 0.05 + 0.2 }}
+                    className="flex items-center text-white/60 text-sm group-hover:text-white/75 transition-colors"
+                  >
+                    <span className="w-1 h-1 bg-[#3BA7FF] rounded-full mr-3 opacity-70 group-hover:opacity-100 transition-opacity" />
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
