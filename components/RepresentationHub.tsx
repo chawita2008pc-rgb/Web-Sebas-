@@ -96,7 +96,7 @@ export const RepresentationHub: React.FC = () => {
              animate={{ opacity: 1 }}
              transition={{ delay: 0.3 }}
           >
-             <a href="https://wa.me/5491153329100" target="_blank" rel="noopener noreferrer" className="text-sm text-[#3BA7FF] hover:text-white transition-colors underline underline-offset-4 decoration-[#3BA7FF]/30">
+             <a href="#contact" className="text-sm text-[#3BA7FF] hover:text-white transition-colors underline underline-offset-4 decoration-[#3BA7FF]/30">
                 {t.hero.contactLink}
              </a>
           </motion.div>
