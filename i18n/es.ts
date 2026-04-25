@@ -40,26 +40,32 @@ export const es = {
     areas: [
       {
         title: 'Hornos y Fusión',
+        brand: 'ANTONINI',
         items: ['Hornos', 'Hornos de templado', 'Hornos de moldura', 'Hornos para equipo de delivery', 'Ingeniería de hornos', 'Proyectos llave en mano'],
       },
       {
         title: 'Alimentación y Distribución',
+        brand: 'FALORNI',
         items: ['Canales', 'Sistemas de coloreado', 'Sistemas de agitadores', 'Sistemas de dosificación superficial'],
       },
       {
         title: 'Moldes y Componentes',
+        brand: 'PEREGO',
         items: ['Pre moldes', 'Moldes', 'Fondos', 'Coronas', 'Demás accesorios'],
       },
       {
         title: 'Proceso IS y Producción',
+        brand: 'FAMOR',
         items: ['Máquinas IS', 'Máquinas rotativas (prensas, H28, etc.)', 'Robots', 'Mecanismos para prensas y máquinas IS', 'Repuestos y equipamiento variable'],
       },
       {
         title: 'Refractarios',
+        brand: 'SIGMA',
         items: ['Refractarios para hornos', 'Refractarios para alimentadores', 'Refractarios para W.E.', 'Refractarios para cámaras de regeneración', 'Refractarios consumibles'],
       },
       {
         title: 'Fin de Línea',
+        brand: 'OMS',
         items: ['Máquinas flejadoras', 'Máquinas de termoretracción', 'Máquinas envolvedoras', 'Máquinas de enfundado', 'Repuestos'],
       },
     ],

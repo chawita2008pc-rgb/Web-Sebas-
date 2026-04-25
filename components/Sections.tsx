@@ -56,7 +56,7 @@ export const SolutionAreas = () => {
               className="p-8 bg-[#050505] border border-white/5 hover:border-[#3BA7FF]/30 transition-colors group cursor-default"
             >
               <div className="h-0.5 w-8 bg-[#3BA7FF] mb-5 group-hover:w-16 transition-all duration-300" />
-              <h3 className="text-xl font-semibold text-white mb-4">{area.title}</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">{area.brand}</h3>
               <ul className="space-y-2">
                 {area.items.map((item, i) => (
                   <motion.li

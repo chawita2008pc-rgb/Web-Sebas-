@@ -30,6 +30,7 @@ const getBrandLogo = (id: string, className: string) => {
     case 'famor': return <LogoFamor className={className} />;
     case 'oms': return <LogoOms className={className} />;
     case 'falorni': return <LogoFalorni className={className} />;
+    case 'glass-export': return <LogoGlassExport className={className} />;
     default: return null;
   }
 };
@@ -243,7 +244,7 @@ export const RepresentationHub: React.FC = () => {
               <div className="mt-8">
                 <div className="flex items-center justify-between mb-6">
                    <h3 className="text-3xl font-bold text-white tracking-tight">{activeContent.name}</h3>
-                   <div className="w-32 h-20 rounded-md p-2 flex items-center justify-center bg-white/10">
+                   <div className={`w-32 h-20 rounded-md p-2 flex items-center justify-center ${activeContent.id === 'glass-export' ? 'bg-white' : 'bg-white/10'}`}>
                       {getBrandLogo(activeContent.id, "w-full h-full")}
                    </div>
                 </div>

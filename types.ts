@@ -9,6 +9,7 @@ export interface Brand {
 
 export interface ServiceItem {
   title: string;
+  brand: string;
   items: string[];
 }
 
