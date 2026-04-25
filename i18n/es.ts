@@ -114,7 +114,7 @@ export const es = {
 
   // Footer
   footer: {
-    description: 'Conectando la industria del vidrio con soluciones de fabricación premium desde 1990.',
+    description: 'Conectando la industria del vidrio con proveedores premium desde 1990.',
     sitemap: 'Mapa del Sitio',
     contact: 'Contacto',
     legal: 'Legal',
