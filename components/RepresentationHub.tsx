@@ -15,11 +15,11 @@ import {
 
 const HUB_POSITIONS = [
   { id: 'perego', angle: 0 },
-  { id: 'sigma', angle: 60 },
+  { id: 'falorni', angle: 60 },
   { id: 'famor', angle: 120 },
   { id: 'oms', angle: 180 },
   { id: 'antonini', angle: 240 },
-  { id: 'falorni', angle: 300 }
+  { id: 'sigma', angle: 300 }
 ];
 
 const getBrandLogo = (id: string, className: string) => {
