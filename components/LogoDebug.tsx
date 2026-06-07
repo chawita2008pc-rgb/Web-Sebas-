@@ -4,8 +4,6 @@ const LOGO_FILES = [
   'sigma.png',
   'perego.png',
   'antonini.png',
-  'falorni.png',
-  'famor.png',
   'oms.png',
   'glass-export.png'
 ];

@@ -29,22 +29,6 @@ export const BRANDS: Brand[] = [
     website: 'https://antoninisrl.com/es/index',
   },
   {
-    id: 'falorni',
-    name: 'FALORNI',
-    logoUrl: 'https://logo.clearbit.com/falornitech.com?size=400',
-    description: 'Glass melting technology and engineering services.',
-    products: ['Furnace Engineering', 'Furnaces', 'Channels', 'Coloring Systems', 'Stirring Systems', 'Turnkey Projects', 'Spare Parts'],
-    website: 'https://www.falornitech.com/',
-  },
-  {
-    id: 'famor',
-    name: 'FAMOR',
-    logoUrl: 'https://logo.clearbit.com/famoreng.com?size=400',
-    description: 'Engineering and manufacturing of equipment for glass production.',
-    products: ['IS Machines', 'Rotary Machines (presses, H28, etc.)', 'Robots', 'Mechanisms for Presses and IS Machines', 'Spare Parts & Variable Equipment'],
-    website: 'https://famoreng.com/',
-  },
-  {
     id: 'oms',
     name: 'OMS',
     logoUrl: 'https://logo.clearbit.com/omsspa.com?size=400',
@@ -61,19 +45,9 @@ export const SOLUTION_AREAS: ServiceItem[] = [
     items: ['Furnaces', 'Tempering Furnaces', 'Mould Furnaces', 'Delivery Equipment Furnaces', 'Furnace Engineering', 'Turnkey Projects'],
   },
   {
-    title: 'Feeding & Distribution',
-    brand: 'FALORNI',
-    items: ['Channels', 'Coloring Systems', 'Stirring Systems', 'Surface Dosing Systems'],
-  },
-  {
     title: 'Moulds & Components',
     brand: 'PEREGO',
     items: ['Blank Moulds', 'Moulds', 'Bottom Plates', 'Neck Rings', 'Other Accessories'],
-  },
-  {
-    title: 'IS Process & Production',
-    brand: 'FAMOR',
-    items: ['IS Machines', 'Rotary Machines (presses, H28, etc.)', 'Robots', 'Mechanisms for Presses and IS Machines', 'Spare Parts & Variable Equipment'],
   },
   {
     title: 'Refractories',

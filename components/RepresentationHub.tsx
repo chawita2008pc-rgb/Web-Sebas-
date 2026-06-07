@@ -7,19 +7,15 @@ import {
   LogoSigma,
   LogoPerego,
   LogoAntonini,
-  LogoFamor,
   LogoOms,
-  LogoFalorni,
   LogoGlassExport
 } from './BrandLogos';
 
 const HUB_POSITIONS = [
-  { id: 'perego', angle: 0 },
-  { id: 'falorni', angle: 60 },
-  { id: 'famor', angle: 120 },
-  { id: 'oms', angle: 180 },
-  { id: 'antonini', angle: 240 },
-  { id: 'sigma', angle: 300 }
+  { id: 'perego',   angle: 315 },
+  { id: 'sigma',    angle: 45  },
+  { id: 'oms',      angle: 135 },
+  { id: 'antonini', angle: 225 },
 ];
 
 const getBrandLogo = (id: string, className: string) => {
@@ -27,9 +23,7 @@ const getBrandLogo = (id: string, className: string) => {
     case 'sigma': return <LogoSigma className={className} />;
     case 'perego': return <LogoPerego className={className} />;
     case 'antonini': return <LogoAntonini className={className} />;
-    case 'famor': return <LogoFamor className={className} />;
     case 'oms': return <LogoOms className={className} />;
-    case 'falorni': return <LogoFalorni className={className} />;
     case 'glass-export': return <LogoGlassExport className={className} />;
     default: return null;
   }

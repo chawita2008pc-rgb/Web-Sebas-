@@ -2,8 +2,6 @@ import React from 'react';
 import sigmaLogo from '../assets/logos/sigma.png';
 import peregoLogo from '../assets/logos/perego.png';
 import antoniniLogo from '../assets/logos/antonini.jpg';
-import falorniLogo from '../assets/logos/falorni.jpeg';
-import famorLogo from '../assets/logos/famor.png';
 import omsLogo from '../assets/logos/oms.png';
 import glassExportLogo from '../assets/logos/glass-export.png';
 
@@ -35,14 +33,6 @@ export const LogoPerego: React.FC<LogoProps> = ({ className }) => (
 
 export const LogoAntonini: React.FC<LogoProps> = ({ className }) => (
   <BrandImage src={antoniniLogo} alt="Antonini" className={className} />
-);
-
-export const LogoFalorni: React.FC<LogoProps> = ({ className }) => (
-  <BrandImage src={falorniLogo} alt="Falorni Tech" className={className} />
-);
-
-export const LogoFamor: React.FC<LogoProps> = ({ className }) => (
-  <BrandImage src={famorLogo} alt="Famor Engineering" className={className} />
 );
 
 export const LogoOms: React.FC<LogoProps> = ({ className }) => (

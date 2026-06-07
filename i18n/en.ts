@@ -44,19 +44,9 @@ export const en = {
         items: ['Furnaces', 'Tempering Furnaces', 'Mould Furnaces', 'Delivery Equipment Furnaces', 'Furnace Engineering', 'Turnkey Projects'],
       },
       {
-        title: 'Feeding & Distribution',
-        brand: 'FALORNI',
-        items: ['Channels', 'Coloring Systems', 'Stirring Systems', 'Surface Dosing Systems'],
-      },
-      {
         title: 'Moulds & Components',
         brand: 'PEREGO',
         items: ['Blank Moulds', 'Moulds', 'Bottom Plates', 'Neck Rings', 'Other Accessories'],
-      },
-      {
-        title: 'IS Process & Production',
-        brand: 'FAMOR',
-        items: ['IS Machines', 'Rotary Machines (presses, H28, etc.)', 'Robots', 'Mechanisms for Presses and IS Machines', 'Spare Parts & Variable Equipment'],
       },
       {
         title: 'Refractories',
@@ -139,8 +129,6 @@ export const en = {
     sigma: { description: 'Specialists in refractories and glass conditioning.', products: ['Furnace Refractories', 'Feeder Refractories', 'W.E. Refractories', 'Regenerator Chamber Refractories', 'Consumable Refractories'] },
     perego: { description: 'Precision mould manufacturing for glass industries.', products: ['Blank Moulds', 'Moulds', 'Bottom Plates', 'Neck Rings', 'Other Accessories'] },
     antonini: { description: 'World-class annealing and decorating lehrs.', products: ['Furnaces', 'Tempering Furnaces', 'Surface Dosing Systems', 'Mould Furnaces', 'Delivery Equipment Furnaces', 'Spare Parts'] },
-    falorni: { description: 'Glass melting technology and engineering services.', products: ['Furnace Engineering', 'Furnaces', 'Channels', 'Coloring Systems', 'Stirring Systems', 'Turnkey Projects', 'Spare Parts'] },
-    famor: { description: 'Engineering and manufacturing of equipment for glass production.', products: ['IS Machines', 'Rotary Machines (presses, H28, etc.)', 'Robots', 'Mechanisms for Presses and IS Machines', 'Spare Parts & Variable Equipment'] },
     oms: { description: 'End-of-line packaging solutions.', products: ['Strapping Machines', 'Shrink Wrapping Machines', 'Wrapping Machines', 'Hooding Machines', 'Spare Parts'] },
   },
 };

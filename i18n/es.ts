@@ -44,19 +44,9 @@ export const es = {
         items: ['Hornos', 'Hornos de templado', 'Hornos de moldura', 'Hornos para equipo de delivery', 'Ingeniería de hornos', 'Proyectos llave en mano'],
       },
       {
-        title: 'Alimentación y Distribución',
-        brand: 'FALORNI',
-        items: ['Canales', 'Sistemas de coloreado', 'Sistemas de agitadores', 'Sistemas de dosificación superficial'],
-      },
-      {
         title: 'Moldes y Componentes',
         brand: 'PEREGO',
         items: ['Pre moldes', 'Moldes', 'Fondos', 'Coronas', 'Demás accesorios'],
-      },
-      {
-        title: 'Proceso IS y Producción',
-        brand: 'FAMOR',
-        items: ['Máquinas IS', 'Máquinas rotativas (prensas, H28, etc.)', 'Robots', 'Mecanismos para prensas y máquinas IS', 'Repuestos y equipamiento variable'],
       },
       {
         title: 'Refractarios',
@@ -139,8 +129,6 @@ export const es = {
     sigma: { description: 'Especialistas en refractarios y acondicionamiento de vidrio.', products: ['Refractarios para hornos', 'Refractarios para alimentadores', 'Refractarios para W.E.', 'Refractarios para cámaras de regeneración', 'Refractarios consumibles'] },
     perego: { description: 'Fabricación de moldes de precisión para la industria del vidrio.', products: ['Pre moldes', 'Moldes', 'Fondos', 'Coronas', 'Demás accesorios'] },
     antonini: { description: 'Hornos de recocido y decoración de clase mundial.', products: ['Hornos', 'Hornos de templado', 'Sistemas de dosificación superficial', 'Hornos de moldura', 'Hornos para equipo de delivery', 'Refacciones'] },
-    falorni: { description: 'Tecnología de fusión de vidrio y servicios de ingeniería.', products: ['Ingeniería de hornos', 'Hornos', 'Canales', 'Sistemas de coloreado', 'Sistemas de agitadores', 'Proyectos llave en mano', 'Refacciones'] },
-    famor: { description: 'Ingeniería y fabricación de equipos para producción de vidrio.', products: ['Máquinas IS', 'Máquinas rotativas (prensas, H28, etc.)', 'Robots', 'Mecanismos para prensas y máquinas IS', 'Repuestos y equipamiento variable'] },
     oms: { description: 'Soluciones de embalaje de fin de línea.', products: ['Máquinas flejadoras', 'Máquinas de termoretracción', 'Máquinas envolvedoras', 'Máquinas de enfundado', 'Repuestos'] },
   },
 };

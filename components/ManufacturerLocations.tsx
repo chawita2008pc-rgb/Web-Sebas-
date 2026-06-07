@@ -6,8 +6,6 @@ const MANUFACTURERS = [
   { name: 'SIGMA', address: 'Via delle Grigne, 12/A', city: 'Locate Varesino (CO)', postal: '22070', country: 'Italy', googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Via+delle+Grigne+12%2F%2A+Locate+Varesino+CO+22070+Italy' },
   { name: 'PEREGO', full_name: 'Giancarlo Perego SpA', address: 'Via Marchesina 58', city: 'Trezzano sul Naviglio (MI)', postal: '20090', country: 'Italy', googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Via+Marchesina+58+20090+Trezzano+sul+Naviglio+MI+Italy' },
   { name: 'ANTONINI', full_name: 'Antonini S.r.l.', address: "Via Medaglie d'Oro della Resistenza 2", city: 'Empoli (FI)', postal: '50053', country: 'Italy', googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Via+Medaglie+d'Oro+della+Resistenza+2+50053+Empoli+FI+Italy" },
-  { name: 'FALORNI', full_name: 'Falorni Tech', address: 'Viale IV Novembre, 15', city: 'Empoli (FI)', postal: '50053', country: 'Italy', googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Viale+IV+Novembre+15+50053+Empoli+FI+Italy' },
-  { name: 'FAMOR', full_name: 'Famor Engineering', address: 'Via Avigliana 3', city: 'Rivalta di Torino (TO)', postal: '10040', country: 'Italy', googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Via+Avigliana+3+10040+Rivalta+di+Torino+TO+Italy' },
   { name: 'OMS', full_name: 'OMS Group', address: 'Via Borgomanero 44', city: 'Paruzzaro (NO)', postal: '28040', country: 'Italy', googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Via+Borgomanero+44+28040+Paruzzaro+NO+Italy' }
 ];
 
